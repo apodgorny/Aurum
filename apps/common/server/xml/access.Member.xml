@@ -1,0 +1,5 @@
+<access>
+	<allow>site/*/*</allow>
+	<deny>admin/*/*</deny>
+	<deny>site/email/*</deny>
+</access>

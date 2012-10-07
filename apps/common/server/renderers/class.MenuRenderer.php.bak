@@ -1,0 +1,42 @@
+<?
+    /**
+     * Menu renderer
+     * @author Alexander Podgorny <ap.coding@gmail.com>
+     * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+     */
+
+    class MenuRenderer extends Renderer {
+
+        /****************** PRIVATE *******************/
+        /****************** PROTECTED *****************/
+        /****************** PUBLIC ********************/
+        
+        public function render($oMenu) {
+            $aData      = $oMenu->getDefinition();
+			$sCSSClass  = $oMenu->getCssClass();
+			
+            $s = '';
+            if (isset($aData['items'])) {
+                foreach ($aData['items'] as $aItem) {
+                    $s .= Dom::LI(array('class'=>$aItem['class']),
+                        Dom::A(array('href'=>$aItem['link']),
+                            $aItem['label']
+                        )
+                    );
+                }
+            }
+            $s = Dom::UL(array(
+                'class' => $sCSSClass
+                ), $s
+            );
+            $oMenu->registerJsComponent();
+            return $s."\n";
+        }
+        public function renderReadOnly($oMenu) {
+            return $this->render($oMenu);
+        }
+
+    }
+    
+
+?>

@@ -1,0 +1,9 @@
+.test {
+	width: 200px;
+	height: 200px;
+	color: #FFF [WEBKIT];
+	border: 1px solid black;
+	color: #FF0000 [WEBKIT];
+	color: #00FF00 [GECKO];
+	color: #DD3455 [OPERA];
+}

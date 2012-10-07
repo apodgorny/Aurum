@@ -1,0 +1,23 @@
+<?
+	$sLinkToApplications = Navigation::link('admin', 'home', 'applications');
+	$sLinkToDatabase 	 = Navigation::link('admin', 'database');
+	$sLinkToRelease 	 = Navigation::link('admin', 'release');
+?>
+<h1>Admin</h1>
+<table>
+	<tr>
+		<td>
+			<a href="<?= $sLinkToApplications ?>">Applications manager</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="<?= $sLinkToDatabase ?>">Database manager</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="<?= $sLinkToRelease ?>">Release manager</a>
+		</td>
+	</tr>
+</table>

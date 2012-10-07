@@ -1,0 +1,13 @@
+/**
+ * Link
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+a.link {
+}
+    a.link img {
+        background-color: #FFF;
+        border: 1px solid #CCC;
+        padding: 2px;
+    }

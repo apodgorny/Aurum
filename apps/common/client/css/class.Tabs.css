@@ -1,0 +1,27 @@
+/**
+ * Generic Tabs Class
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+ul.tabs {
+    clear: both;
+    overflow: hidden;
+}
+    ul.tabs li {
+        float: left;
+        margin: 1px 1px 0 1px;
+    }
+        ul.tabs li a {
+            color: #333 !important;
+            padding: 0 !important;
+        }
+        ul.tabs li a:hover {
+            text-decoration: none !important;
+        }
+        ul.tabs li a div {
+            padding: 5px 10px;
+            border: 1px solid #AAA;
+            border-bottom: 0;
+            cursor: pointer;
+        }

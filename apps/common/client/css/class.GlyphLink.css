@@ -1,0 +1,16 @@
+/**
+ * Class GlyphLink
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+.glyph-link {
+    background: url(sprite_glyphs.png) no-repeat;
+    padding-left: 18px !important;
+}
+    .glyph-link-subscribe {
+        background-position: 0 0;
+    }
+    .glyph-link-contact {
+        background-position: 0 -24px;
+    }

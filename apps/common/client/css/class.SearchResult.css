@@ -1,0 +1,43 @@
+/**
+ * Css for SearchResultBoxRenderer
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+.search-result {
+	margin: 5px 10px 0 0;
+	width:	300px;
+	height: 70px;
+}
+    .search-result .image {
+        float: left;
+        margin: 0 8px 0 0;
+    }
+    .search-result h1 {
+    }
+	.search-result .name {
+		font-size: 14px;
+		font-weight: bold;
+		display: block;
+		text-decoration: underline;
+		margin: 0 0 4px 0;
+	}
+		.search-result .name b {
+			background-color: #EEE;
+		}
+	.search-result .title {
+		color: #333;
+	}
+		.search-result .title b {
+			background-color: #EEE;
+		}
+	.search-result .desc {
+		color: #333;
+		text-align: left;
+		font-size: 12px;
+	}
+		.search-result .desc b {
+			color: #000;
+			background-color: #EEE;
+		}
+    

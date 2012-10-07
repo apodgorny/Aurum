@@ -1,0 +1,44 @@
+body {
+	background-color: #EEE4D4;
+}
+table tr td {
+	padding: 2px 8px;
+}
+h1 {
+    margin: 10px 0 0 0;
+	font-size: 20px;
+	font-weight: bold;
+	display: block;
+}
+a {
+    color: #802A2A;
+}
+
+
+
+.header {
+	margin: 0 20px;
+	padding: 0 20px;
+}
+    .header .login-info {
+        margin: 10px 0 0 0;
+    }
+    
+.layout {
+	margin: 20px;
+	padding: 20px;
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.test {
+	color: #0000FF;
+	color: #FF0000 [IE];
+	color: #F10000 [IE_6];
+	color: #F20000 [IE_7];
+	color: #00FF00 [GECKO];
+}
+#javascript {
+	font-family: "alert('yo')";
+}

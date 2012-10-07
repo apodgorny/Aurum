@@ -1,0 +1,25 @@
+<div class="breadcrumb">
+	<a href="<?= $this->link('index','index') ?>">Admin</a> &raquo;
+	<a href="<?= $this->link('index','applications') ?>">Applications</a>
+</div>
+<br />
+<h1>Controllers of <?= ucfirst($this->appName) ?></h1>
+<table>
+	<? foreach ($this->controllers as $aController) : ?>
+		<tr>
+			<td>
+				<b><?= $aController['file'] ?></b>
+			</td>
+			<td>
+				<a href="<?= $this->link('index', 'views', array('application'=>$this->appName, 'controller'=>$aController['name'])) ?>">
+					Views
+				</a>
+			</td>
+			<td>
+				<?= $aController['add_view_form']->render(array('renderer'=>'FormHorizontal')) ?>
+			</td>
+		</tr>
+	<? endforeach; ?>
+</table>
+<br />
+<?= $this->add_controller_form->render(array('renderer'=>'FormHorizontal')) ?>

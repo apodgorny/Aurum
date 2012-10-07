@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<?= MVC::getCSSIncludes() ?>
+		<style>
+			html { overflow-y: auto; overflow: auto; }
+		</style>
+	</head>
+	<body>
+        <div id="dialog-template-content" class="dialog-template-content">
+			<?= Notification::construct()->render() ?>
+<!-- BEGIN VIEW -->
+<? $this->renderView(); ?>
+<!-- END VIEW -->
+		</div>
+		
+		<script>
+			<? include $_ENV['PATH_TO_COMMON'].'client/js/global.Constants.js.php'; ?>
+		</script>
+
+		<?= MVC::getJSIncludes() ?>
+
+		<script>
+			<? include $_ENV['PATH_TO_COMMON'].'client/js/global.Initialization.js.php'; ?>
+		</script>
+		
+		<script>
+			<? if (Request::hasParam('dialog_id')) : ?>
+				<? $sDialogId = Request::requireParam('dialog_id'); ?>
+				$(document).ready(function() {
+					var oContent = $('#dialog-template-content :nth-child(2)');
+					parent.App.Dialog.show('<?= $sDialogId ?>');
+					parent.App.Dialog.setTitle('<?= $sDialogId ?>', oContent.attr('title'));
+					parent.App.Dialog.setSize('<?= $sDialogId ?>', oContent.outerWidth(), oContent.height());
+				});
+			<? endif; ?>
+		</script>
+
+
+	</body>
+</html>

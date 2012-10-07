@@ -1,0 +1,26 @@
+<div><a href="<?= $this->link('home','index') ?>">&laquo; Admin</a></div>
+<br />
+<h1>Applications</h1>
+<table>
+	<? foreach ($this->apps as $aApp) : ?>
+		<?
+			$sAppName = $aApp['name'];
+			$sLinkToController = $this->link('home', 'controllers', array('application'=>$sAppName));
+			$sAddControllerForm = $aApp['add_controller_form']->render(array('renderer'=>'FormHorizontal'));
+		?>
+		<tr>
+			<td>
+				<b><?= $sAppName ?></b>
+			</td>
+			<td>
+				<a href="<?= $sLinkToController ?>">Controllers</a>
+			</td>
+			<td>
+				<?= $sAddControllerForm ?>
+			</td>
+			<td>
+				[ <a href="<?= Navigation::link($sAppName) ?>">Go to "<?= $sAppName ?>"</a> ]
+			</td>
+		</tr>
+	<? endforeach; ?>
+</table>

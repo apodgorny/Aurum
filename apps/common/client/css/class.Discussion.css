@@ -1,0 +1,42 @@
+/**
+ * css for DiscussionRenderer and DiscussionPostRenderer
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+.discussion {
+    margin: 20px 0 0 0;
+}
+
+.discussion-post {
+    border-top: 1px dotted #CCC;
+    background: #FCFCFC url(bg_grad_content.png) 0 -65px repeat-x;
+    color: #444;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+    .discussion-post .info {
+        float: left;
+        padding: 7px 0 5px 5px;
+        width: 45px;
+    }
+    .discussion-post .message {
+        padding: 5px 0;
+        font-size: 14px;
+        text-align: left;
+        margin-left: 45px;
+    }
+        .discussion-post .message .text {
+            width: 570px;
+            float: left;
+        }
+            .discussion-post .message .text .name {
+                padding-right: 5px;
+            }
+        .discussion-post .message .delete {
+            float: right;
+        }
+    .discussion-post .date {
+        font-size: 11px;
+        color: #999;
+    }

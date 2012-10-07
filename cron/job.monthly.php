@@ -1,0 +1,4 @@
+<?
+print "monthly\n";
+?>
+

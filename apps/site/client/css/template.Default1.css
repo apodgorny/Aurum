@@ -1,0 +1,146 @@
+body.default {
+	background: #530302 url(bg_grad.png) top left repeat-x;
+	font-family: "trebuchet ms",arial,helvetica,sans-serif;
+}
+body.default h1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+body.default a {
+    color: /*#256596;*/ #588d14;
+    text-decoration: none;
+    font-family: arial;
+    font-size: 12px;
+    padding: 1px 0;
+}
+body.default a:hover {
+    text-decoration: underline;
+}
+body.default textarea {
+    border: 1px solid #CCC;
+}
+
+body.default div.template-bg-left {
+    background: url(bg_left.jpg) top left repeat-x;
+    background: none;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+body.default div.template {
+    background: url(bg.jpg) top center no-repeat;
+    background: none;
+    width: 100%;
+}
+    /******* HEADER *******/
+    
+    body.default div.template-header {
+    	width: 1000px;
+        margin: 0 auto;
+    	height: 75px;
+    	height: 74px [OPERA];
+    	border-top: none;
+    	border-bottom: none;
+    }
+        body.default div.template-header .logo {
+            font-size: 0;
+            background: url(logo.jpg) 0 5px no-repeat;
+            width: 200px;
+            height: 70px;
+            position: relative [IE];
+            top: -15px [IE];
+        }
+        body.default div.template-header .search {
+            padding: 5px 15px 10px 15px;
+            background-color: #999;
+        	-moz-border-radius-bottomleft: 10px;
+            -webkit-border-bottom-left-radius: 10px;
+            -moz-border-radius-bottomright: 10px;
+            -webkit-border-bottom-right-radius: 10px;
+            width: 290px;
+            float: right;
+        }
+        	body.default div.template-header .search .search-query {
+        		width: 215px;
+        		width: 219px [IE];
+        		width: 215px [WEBKIT];
+        	}
+    
+    /******* body.default *******/
+    
+    
+    body.default div.template-content {
+        padding: 15px 0;
+    	width: 1000px;
+    	margin: 0 auto;
+    	background: #000 url(fg_grad.png) top left repeat-x;
+    	-moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+        body.default div.template-content .column-l {
+            padding: 15px;
+            background-color: #FFF;
+        }
+        body.default div.template-content .column-r {
+            padding: 15px;
+        }
+        body.default div.template-header-navigation {
+            margin: 0 auto;
+            padding: 0;
+            position: absolute;
+            top: 59px;
+            color: #FFF;
+            width: 1000px;
+        }
+            body.default div.template-header-navigation .login-info {
+                float: right;
+                margin: -2px 10px 5px 0;
+            }
+                body.default div.template-header-navigation .login-info a {
+                    color: #FFF;
+                }
+        
+        body.default div.template-content .template-content-wrapper {
+            margin: 0 15px;
+            padding: 0;
+            background-color: #e9f2e6; /* #f7faf6; */
+        }
+
+    /******* FOOTER *******/
+    
+    body.default div.template-footer {
+    	width: 1000px;
+        margin: 0 auto;
+    	background-color: #FFF;
+    }
+    
+    
+/********************* COMMON CLASSES *********************/
+body.default .userimage-m {
+    padding: 5px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #F9F9F9;
+    background: #ededed url(bg_grad_content.png) 0 0 repeat-x;
+}
+body.default .userimage-s {
+    padding: 2px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #FFF;
+}
+body.default .userimage-t {
+    padding: 2px;
+    border: 1px solid #DDD;
+    width: 32px;
+    height: 32px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    background-color: #FFF;
+}

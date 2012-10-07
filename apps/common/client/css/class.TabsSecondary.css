@@ -1,0 +1,36 @@
+/**
+ * TabsMy
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+ul.tabs-secondary {
+    margin: -15px -14px 10px -15px;
+    display: relative;
+    background: #EEE url(bg_grad_secondary_tabs.png) 0 0 repeat-x;
+}
+    ul.tabs-secondary li {
+        border: 0;
+        float: left;
+        margin: 0;
+        color: #000;
+        font-family: arial;
+    }
+    ul.tabs-secondary li.selected {
+        float: left;
+    }
+        ul.tabs-secondary li a div {
+            padding: 10px;
+            border: none;
+            border-right: 1px solid #DFDFDF;
+        }
+        ul.tabs-secondary li.first a div {
+            padding-left: 15px !important;
+        }
+        ul.tabs-secondary li.selected a div {
+            background-color: #FFF;
+            background-image: none;
+            border: none;
+            border-right: 1px solid #DFDFDF;
+            font-weight: bold;
+        }

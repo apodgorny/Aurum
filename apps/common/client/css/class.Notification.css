@@ -1,0 +1,18 @@
+/**
+ * Class Notification
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+ 
+.notification {
+    display: none;
+    background-color: #FEFEA5;
+    color: #000;
+    font-weight: bold;
+    padding: 5px;
+    width: 300px;
+    text-align: center;
+    margin-left: 75px;
+    float: left;
+}
+

@@ -1,0 +1,98 @@
+<style>
+	.module {
+		padding: 0;
+		margin: 0 0 10px 0;
+		font-family: helvetica;
+	}
+		.module h1 {
+			font-weight: bold;
+			font-size: 12px;
+			background-color: <?= Color::MIDTONE ?>;
+			color: #FFF;
+			padding: 7px 10px;
+			-moz-border-radius-topleft: 4px;
+			-webkit-border-top-left-radius: 4px;
+			border-top-left-radius: 4px;
+			-moz-border-radius-topright: 4px;
+			-webkit-border-top-right-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+		.module .content {
+			background-color: #FFF;
+			border: 1px solid <?= Color::LIGHT ?>;
+			border-top: none;
+			padding: 20px;
+		}
+			.module .content h4 {
+				font-size: 16px;
+				font-weight: bold;
+				margin-top: 10px;
+			}
+			.module .content ul {
+				margin-top: 10px;
+			}
+				.module .content ul li {
+					margin: 5px 20px;
+					font-size: 14px;
+					list-style-type: disc;
+				}
+</style>
+<div class="module">
+	<h1>Building</h1>
+	<div class="content">
+		<h4>Building will do the following:</h4>
+		<ul>
+			<li>
+				Compile all CSS listed in <u><?= $_ENV['INSTALLATION_PATH'] ?>/apps/myapp/server/settings/cssincludes.php</u><br />
+				into a group of browser-specific compiled files located in
+				<u><?= $_ENV['INSTALLATION_PATH'] ?>/apps/myapp/client/css</u>.<br />
+				$_ENV['USE_COMPILED_CSS'] config option will govern their inclusion.<br />
+				[<b>Currently <?= $_ENV['USE_COMPILED_CSS'] ? 'On' : 'Off' ?></b>]
+				<br /><br />
+			</li>
+			<li>
+				Compile all JS listed in apps/myapp/server/settings/jsincludes.php into
+				a apps/myapp/client/js/compiled.js.<br />
+				$_ENV['USE_COMPILED_JS'] config option will govern it's inclusion.<br />
+				[<b>Currently <?= $_ENV['USE_COMPILED_JS'] ? 'On' : 'Off' ?></b>]
+			</li>
+		</ul>
+		<br /><br />
+		<?= $this->oBuildForm->render('FormPlain') ?>
+	</div>
+</div>
+
+<div class="module">
+	<h1>Staging</h1>
+	<div class="content">
+		<h4>Staging will do the following:</h4>
+		<ul>
+			<li>Transfer <u><?= $_ENV['INSTALLATION_PATH'] ?>/scripts/release_setup.sh</u> to the server's [site directory]</li>
+			<li>Run it to create new release folder under [site directory]/releases/</li>
+			<li>Zip the entire codebase</li>
+			<li>Transfer it and unzip into the new release folder</li>
+			<li>Point [site directory]/stage@ link to that folder</li>
+		</ul>
+		<h4>To do staging follow these steps:</h4>
+		<ul>
+			<li>Change directory in your command prompt to <u><?= $_ENV['INSTALLATION_PATH'] ?>/scripts/</u></li>
+			<li>Run this command: ./stage.sh</li>
+		</ul>
+	</div>
+</div>
+
+<div class="module">
+	<h1>Publishing</h1>
+	<div class="content">
+		<h4>Publishing script is very simple, it will:</h4>
+		<ul>
+			<li>Point production@ link to the latest release folder</li>
+			<li>And that's it. This guaranties that staging environment is identical to production</li>
+		</ul>
+		<h4>To publish:</h4>
+		<ul>
+			<li>Change directory in your command prompt to <u><?= $_ENV['INSTALLATION_PATH'] ?>/scripts/</u></li>
+			<li>Run this command: ./publish.sh</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+.dgrid-row {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    overflow: auto;
+}
+    .dgrid-row .dgrid-col-l {
+        float: left;
+        text-align: left;
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .dgrid-row .dgrid-col-r {
+        text-align: right;
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+        clear: right;
+    }

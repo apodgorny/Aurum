@@ -1,0 +1,21 @@
+<div class="breadcrumb">
+	<a href="<?= $this->link('index','index') ?>">Admin</a> &raquo;
+	<a href="<?= $this->link('index','applications') ?>">Applications</a> &raquo;
+	<a href="<?= $this->link('index','controllers', array('application'=>$this->appName)) ?>">Controllers of <?= ucfirst($this->appName) ?></a>
+</div>
+<br />
+<h1>Views of <?= ucfirst($this->controllerName) ?> controller, <?= ucfirst($this->appName) ?> application</h1>
+<table>
+	<? foreach ($this->views as $aView) : ?>
+		<?
+			$sLinkToView = Navigation::link($this->appName, $this->controllerName, $aView['name']);
+		?>
+		<tr>
+			<td>
+				<b><a href="<?= $sLinkToView ?>"><?= $aView['file'] ?></a></b>
+			</td>
+		</tr>
+	<? endforeach; ?>
+</table>
+<br /><br />
+<div><?= $this->add_view_form->render(array('renderer'=>'FormHorizontal')) ?></div>

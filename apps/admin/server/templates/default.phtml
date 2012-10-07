@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<?= MVC::getCSSIncludes() ?>
+ 	</head>
+	<body>
+		<div class="header">
+			<?= Grid::BEGIN('header', 200) ?>
+				<h1>Admin Application</h1>
+			<?= Grid::SPLIT('header') ?>
+			
+				<div class="login-info">
+					<? if (LoginLogic::hasLogin()) : ?>
+						<?= MemberLogic::me('first_name') ?> 
+						<?= MemberLogic::me('last_name') ?>
+						(<b><?= MemberLogic::me('email') ?></b>)
+						&nbsp;|&nbsp;
+						<a href="<?= Navigation::link('site', 'login', 'login') ?>">Log out</a>
+					<? else : ?>
+						<a href="<?= Navigation::link('site', 'login', 'login') ?>">Log in</a>
+					<? endif; ?> 
+					<br />
+				</div>
+				
+			<?= Grid::END('header') ?>
+		</div>
+		<div class="layout">
+		<?= MVC::getJSIncludes() ?>
+<!-- BEGIN VIEW -->
+<? $this->renderView(); ?> 
+<!-- END VIEW -->
+		</div>
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape(
+				"%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"
+			));
+		</script>
+		<script type="text/javascript">
+			try {
+			var pageTracker = _gat._getTracker("UA-16318739-1");
+			pageTracker._trackPageview();
+			} catch(err) {}
+		</script>
+	</body>
+</html>

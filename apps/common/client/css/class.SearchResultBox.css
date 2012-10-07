@@ -1,0 +1,59 @@
+/**
+ * Css for SearchResultBoxRenderer
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+.search-result-box {
+    width: 214px;
+    height: 308px;
+    padding: 0px;
+    margin: 0 6px 6px 0;
+    /*border: 1px solid #DDD;*/
+    background-color: #FFF;
+  /*  -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;*/
+    float: left;
+}
+        .search-result-box .name {
+            font-size: 18px;
+            background-color: #E9F2E6;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            padding: 0px;
+            letter-spacing: -0.05em;
+        }
+            .search-result-box .name a {
+                color: #000;
+                font-size: 18px;
+            }
+        .search-result-box .title {
+            font-size: 12px;
+            height: 30px;
+            font-weight: normal;
+            text-align: center;
+            padding: 2px 7px 0;
+        }
+        .search-result-box .image {
+            width: 175px;
+            height: 175px;
+            margin: 2px auto 0px auto;
+        }
+        .search-result-box .excerpt {
+            height: 50px;
+            font-size: 12px;
+            padding: 0 7px;
+        }
+        .search-result-box .rating {
+            padding: 0 7px;
+        }
+        .search-result-box .more {
+            font-weight: bold;
+            float: right;
+            padding: 0 7px;
+        }
+        .search-result-box .more:hover {
+            text-decoration: underline;
+        }
+    

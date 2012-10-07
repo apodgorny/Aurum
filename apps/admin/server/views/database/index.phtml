@@ -1,0 +1,40 @@
+<style>
+    .database-index-filename {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 0 10px 0;
+    }
+	button {
+		width: 200px;
+	}
+</style>
+
+<div class="breadcrumb">
+	<a href="<?= Navigation::link('admin', 'home','index') ?>">&laquo; Admin</a>
+</div>
+
+<br />
+<h1>Database Management</h1>
+
+<br />
+<?= $this->formUpdateSchema->render(array('renderer'=>'FormHorizontal')) ?>
+<br />
+<?= $this->formUpdateData->render(array('renderer'=>'FormHorizontal')) ?>
+<br />
+<?= $this->formReindex->render(array('renderer'=>'FormHorizontal')) ?>
+
+<br />
+
+<? if (count($this->messages)) : ?>
+	<? foreach ($this->messages as $aMessage) : ?>
+	    <? 
+	        $sMessage = strstr($aMessage['error'], 'Success') 
+	            ? Dom::pre(array('style'=>'color:green'), $aMessage['error'])
+	            : Dom::pre(array('style'=>'color:red'), $aMessage['error']);
+	    ?>
+	    <hr />
+	    <h2 class="database-index-filename"><?= $aMessage['file'] ?></h2>
+	    <i><pre><?= $aMessage['query'] ?></pre></i><br />
+		<?= $sMessage ?><br /><br /><br />
+	<? endforeach; ?>
+<? endif; ?>

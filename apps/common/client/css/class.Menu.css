@@ -1,0 +1,49 @@
+/**
+ * css for MenuRenderer
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+.menu {
+    position: absolute;
+    display: none;
+    background-color: #EEE;
+    width: 120px;
+    overflow: hidden;
+    margin: 7px 0 0 1px;
+    padding: 10px 0 10px 0;
+    border: 1px solid #CCC;
+    border-top: 1px solid #DDD;
+    z-index: 1;
+}
+    .menu li {
+        padding: 0;
+        margin: 0;
+    }
+        .menu li a {
+            padding: 4px 10px !important;
+            display: block;
+            width: 100px;
+            color: #333 !important;
+            text-decoration: none;
+            background-color: #FFF;
+            font-weight: bold;
+            border-top: 1px solid #FFF;
+            border-bottom: 1px solid #FFF;
+        }
+        .menu li a:hover {
+            cursor: pointer !important;
+            background-color: #F3F3F3;
+            color: #000 !important;
+            text-decoration: none !important;
+        }
+    .menu li.selected {
+    }
+        .menu li.selected a {
+            color: #000;
+            font-weight: bold;
+        }
+
+/* Menu attached to selected tab */
+.menu-selected {
+}

@@ -1,0 +1,28 @@
+/**
+ * css for RaterRenderer
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+ul.form-element-rater {
+}
+    ul.form-element-rater li,
+    ul.form-element-rater-readonly li {
+        clear: none !important;
+        float: left;
+        width: 16px;
+        height: 16px;
+        background: url(sprite_stars.gif) 0 -16px no-repeat;
+        cursor: pointer;
+        margin: 0;
+    }
+    ul.form-element-rater-readonly li {
+        cursor: default;
+    }
+    ul.form-element-rater li.selected,
+    ul.form-element-rater-readonly li.selected {
+        background: url(sprite_stars.gif) 0 0 no-repeat;
+    }
+    ul.form-element-rater li.hover {
+        background: url(sprite_stars.gif) 0 -32px no-repeat;
+    }

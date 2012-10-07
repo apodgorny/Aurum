@@ -1,0 +1,46 @@
+/**
+ * TabsPrimary
+ * @author Alexander Podgorny <ap.coding@gmail.com>
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+ul.tabs-primary,
+ul.tabs-primary-anonymous {
+    margin: 0px 0 0 240px;
+    margin: 1px 0 0 240px [WEBKIT];
+}
+    ul.tabs-primary li,
+    ul.tabs-primary-anonymous li {
+        float: left;
+/*        margin: 6px 1px 0 1px; */
+        margin: 8px 1px 0 1px; 
+        color: #000;
+        font-family: arial;
+    }
+    ul.tabs-primary li.selected,
+    ul.tabs-primary-anonymous li.selected {
+        float: left;
+        margin: 0px 1px 0 1px;
+    }
+        ul.tabs-primary li a div,
+        ul.tabs-primary-anonymous li a div {
+            border: 1px solid <?= $_ENV['CSS_CONSTANTS']['BG_COLOR'] ?>;
+            -moz-border-radius-topleft: 2px;
+            -webkit-border-top-left-radius: 2px;
+            -moz-border-radius-topright: 2px;
+            -webkit-border-top-right-radius: 2px;
+            /*background: #EEE url(grad_button.png) 0 0 repeat-x;*/
+            background-color: <?= $_ENV['CSS_CONSTANTS']['BG_COLOR'] ?>;
+            border-bottom: 1px solid #CCC;
+            padding: 4px 10px 4px;
+        }
+        ul.tabs-primary li.selected a div,
+        ul.tabs-primary-anonymous li.selected a div {
+            background-color: #FFF;
+            background-image: none;
+            border-bottom: none;
+            padding: 7px 10px 6px;
+            margin-bottom: 0 !important;
+            font-weight: bold;
+            border-top: 5px solid green;
+        }

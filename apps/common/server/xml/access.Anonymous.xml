@@ -1,0 +1,26 @@
+<access>
+	<allow>site/login/*</allow>
+	<allow>site/signup/*</allow>
+	<allow>site/test/*</allow>
+	
+	<deny>site/home/*</deny>
+	<allow>site/home/index</allow>
+	<allow>site/home/home</allow>
+	
+	<allow>site/company/*</allow>
+
+	<allow>site/member/search</allow>
+	<allow>site/member/view</allow>
+	<allow>site/member/index</allow>
+
+	<allow>site/search/*</allow>
+
+	<allow>site/news/*</allow>
+
+	<allow>site/knowledge/*</allow>
+
+	<deny>site/startup/*</deny>
+	<allow>site/startup/search</allow>
+	<allow>site/startup/view</allow>
+	<allow>site/startup/index</allow>
+</access>

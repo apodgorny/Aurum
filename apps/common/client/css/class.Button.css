@@ -1,0 +1,92 @@
+/*
+*  @file module.button.css
+*  @author Alexander Podgorny
+*/
+
+
+/* FF,NS */
+html>body .button {
+  display: -moz-inline-box; /* [FF3]+ */
+  display: button; /* (FF3)- */
+}
+
+/* Safari, Webkit, Opera */
+.button {
+  position: relative;
+  display: button;
+}
+
+/* (IE7)- */
+/* to inline does the trick. */
+* html .button {
+  display: inline;
+}
+
+/* [IE7]+ */
+*:first-child+html .button {
+  display: inline;
+}
+
+.button {
+    background: #c2c2c2 url(grad_button.png) repeat-x;
+    border: 1px solid #4e4e4e;
+    padding: 2px 5px !important;
+    padding: 3px 7px !important     [WEBKIT];
+    font-size: 13px !important;
+    -moz-border-radius: 5px         [GECKO];
+    -webkit-border-radius: 5px      [WEBKIT];
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+    color: #333 !important;
+}
+a.button {
+    padding: 4px 5px !important;
+    text-decoration: none !important;
+}
+a:hover.button {
+    text-decoration: none !important;
+}
+
+.button-secondary {
+    background-color: #395a0e;
+    background-position: 0 -32px;
+    font-weight: bold !important;
+    color: #f3fce8 !important;
+    border-color: #1d3202;
+}
+
+.button-tertiary {
+    background-color: #c2c2c2; 
+    background-position: 0 0;
+    font-weight: normal !important;
+    color: #333 !important;
+    border-color: #4e4e4e;
+}
+
+.button.button-inline-secondary {
+    margin: 0 2px !important;
+    font-size: 10px !important;
+    background-color: #395a0e; 
+    background-position: 0 -32px;
+    padding: 0px 3px !important;
+    font-weight: bold !important;
+    color: #f3fce8 !important;
+    border-color: #1d3202;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.button.button-inline-tertiary {
+    margin: 0 2px !important;
+    font-size: 10px !important;
+    background-color: #c2c2c2; 
+    background-position: 0 0;
+    padding: 0px 3px !important;
+    font-weight: normal !important;
+    color: #333 !important;
+    border-color: #4e4e4e;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+

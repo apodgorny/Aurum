@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<?
+	
+	try {
+		$cookie = Facebook::getCookie();
+		echo 'The ID of the current user is ' . $cookie['uid'];
+	}
+	
+	$oSearchForm = Form::construct('Search');
+	if ($_ENV['CONTROLLER'] == 'search') {
+		$sDefaultQueryDomain = '';
+		switch ($_ENV['ACTION']) {
+			case 'people':
+				$sDefaultQueryDomain = SearchLogic::QUERY_DOMAIN_PEOPLE;
+				break;
+			case 'startups':
+				$sDefaultQueryDomain = SearchLogic::QUERY_DOMAIN_STARTUPS;
+				break;
+		}
+		$oSearchForm['q']['value'] = SearchLogic::toFormalQuery(Request::getParam('q'), $sDefaultQueryDomain);
+	}
+?>
+<html>
+	<head>
+		<?
+			$sTitle = $this->getPageTitle()
+				? 'Startup - '.$this->getPageTitle()
+				: 'Geeksome.com';
+		?>
+		<title><?= $sTitle ?></title>
+		<?
+			$_ENV['CSS_INCLUDES'][] = 'template.Default.css';
+		?>
+		<?= MVC::getCSSIncludes() ?>
+		<script>
+			<? include $_ENV['PATH_TO_COMMON'].'client/js/global.Constants.js.php'; ?>
+		</script>
+		<?= MVC::getJSIncludes() ?>
+	</head>
+	<body class="default">
+		<div class="template-bg-left"></div>
+
+		<div class="template">
+	        <div class="template-header">
+				<?= Grid::BEGIN('header', 200) ?>
+					<a href="<?= $this->link('home', 'index') ?>">
+						<h1 class="logo">startup</h1>
+					</a>
+				<?= Grid::SPLIT('header') ?>
+					<?= Notification::construct()->render() ?>
+					<div class="search">
+						<?= $oSearchForm->render('FormHorizontal') ?>
+					</div>
+				<?= Grid::END('header') ?>
+			</div>
+
+			<div class="template-content">
+				<div class="template-header-navigation">
+					<?= Grid::BEGIN('subheader', 750) ?>
+						<? if (LoginLogic::hasLogin()) : ?>
+							<?= Tabs::construct('Primary')->render() ?>
+						<? else : ?>
+							<?= Tabs::construct('PrimaryAnonymous')->render() ?>
+						<? endif; ?>
+					<?= Grid::SPLIT('subheader') ?>
+						<div class="login-info">
+							<? if (LoginLogic::hasLogin()) : ?>
+								<?
+									$sLinkToMyProfile = Navigation::link('site', 'member', 'view', array(MemberLogic::me('seo_name')));
+								?>
+								Welcome,
+								<b>
+									<a href="<?= $sLinkToMyProfile ?>"><?= MemberLogic::me('first_name') ?></a>
+								</b>
+								&nbsp;|&nbsp;
+								<a href="<?= $this->link('login', 'logout') ?>">Log out</a>
+							<? else : ?>
+								<a href="<?= $this->link('login', 'login') ?>">Log in</a> |
+								<a href="<?= $this->link('signup', 'signup1') ?>">Join</a>
+							<? endif; ?>
+						</div>
+					<?= Grid::END('subheader') ?>
+				</div>
+
+				<div class="template-content-wrapper">
+					<!-- BEGIN VIEW -->
+					<? $this->renderView(); ?>
+					<!-- END VIEW -->
+				</div>
+			</div>
+
+			<div class="template-footer">
+				&copy; Copyright 2009-2010 Inevitable Innovations Inc. |
+				<a href="<?= Navigation::link('site', 'company', 'terms') ?>">Terms of use</a> |
+				<a href="<?= Navigation::link('site', 'company', 'privacy') ?>">Privacy policy</a>
+			</div>
+
+			<script>
+				<? include $_ENV['PATH_TO_COMMON'].'client/js/global.Initialization.js.php'; ?>
+			</script>
+			<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-16470998-1']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+			</script>
+
+		</div>
+	</body>
+</html>

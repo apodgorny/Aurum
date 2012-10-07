@@ -1,0 +1,115 @@
+/**
+  * Module form, to work in conjunciton with VerticalFormRenderer
+  * @author Alexander Podgorny <ap.coding@gmail.com>
+  * @license http://opensource.org/licenses/gpl-license.php GNU Public License 
+  */
+
+ul.form {
+    width: 700px;
+    overflow: hidden;
+}
+    ul.form li {
+        float: none;
+        display: block;
+        clear: both;
+    }
+	    ul.form li div {
+    		display: inline;
+    		float: left;
+    		margin: 3px;
+    	}
+    	    ul.form li.form-error {
+        		font-size: 12px;
+        		padding: 4px 10px 0;
+        		color: #CC0000;
+        		font-style: italic;
+        		font-weight: bold;
+        	}
+    	    ul.form li div.label {
+        		text-align: left;
+        		padding-right: 10px;
+        		display: block;
+        		width: 100px;
+        		line-height: 12px;
+        	}
+        	    ul.form li div.label span.note {
+        	        font-size: 10px;
+        	        line-height: 10px;
+        	        color: #999;
+    	        }
+        		ul.form li div.label label {
+        		    font-weight: bold;
+        		}
+        	ul.form li div.value {
+        	    width: 420px;
+        		text-align: left;
+        	}
+        	ul.form li div.value input,
+        	ul.form li div.value textarea,
+        	ul.form li div.value select {
+        	    width: 100%;
+    	    }
+        	ul.form li div.error {
+        	    width: 120px;
+        		font-size: 10px;
+        		color: #CC0000;
+        		font-style: italic;
+        		padding-left: 10px;
+        		font-weight: bold;
+        		clear: right;
+    	    }
+			ul.form li div.form-element-fieldset {
+				float: right;
+			}
+    	    
+/********************************************/
+ul.form-nolabel {
+    width: 670px;
+    background: #ededed url(bg_grad_content.png) 0 40px repeat-x;
+    border: 1px solid #CCC;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+    ul.form-nolabel li div {
+    	display: block;
+    	float: none;
+    	margin: 10px 10px 0 10px;
+    }
+        ul.form-nolabel li div.value {
+            width: auto;
+        	text-align: right;
+        }
+        ul.form-nolabel li div.label {
+        	text-align: right;
+        	padding-right: 10px;
+        	display: none;
+        }
+        ul.form-nolabel li div.error {
+            width: auto;
+        }
+    	    
+/********************************************/
+ul.form-readonly {
+    width: 600px;
+    overflow: hidden;
+}
+    ul.form-readonly li {
+        float: none;
+        display: block;
+        clear: both;
+    }
+	    ul.form-readonly li div {
+    		display: inline;
+    		float: left;
+    		margin: 3px;
+    	}
+    	    ul.form-readonly li div.label {
+        		text-align: left;
+        		padding-right: 10px;
+        		display: block;
+        		width: 120px;
+        		line-height: 12px;
+        	}
+        	ul.form-readonly li div.value {
+        		font-weight: bold;
+        	}
